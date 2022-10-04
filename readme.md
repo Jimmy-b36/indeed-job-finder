@@ -2,6 +2,8 @@
 
 ## Overview
 
+I made this script for personal use to find jobs that match my skills.
+
 This python script will launch indeed on a browser using selenium and search for jobs based on the parameters you provide.
 the main function running script in find_jobs.py will create a csv list of jobs that match the parameters you provide. I have added some of the main parameters that I use to search for jobs. You can add more parameters to the search by adding them the methods get_url & main in indeed_web_scraper.py
 
