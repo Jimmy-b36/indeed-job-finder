@@ -3,7 +3,7 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, ElementClickInterceptedException
+from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, ElementClickInterceptedException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -67,23 +67,23 @@ def main(keywords,position, location, remote, age, language, radius):
         cards = driver.find_elements(By.CLASS_NAME,'slider_container')
         try:
           for element in cards:
-            driver.implicitly_wait(5)
+            driver.implicitly_wait(10)
             element.click()
-            driver.implicitly_wait(2)
+            driver.implicitly_wait(10)
             description = WebDriverWait(driver, 10).until(
               EC.presence_of_element_located((By.ID, "jobDescriptionText"))
             )
             #check to see if key word is in description
             for word in keywords:
               if word in description.text:
-                print('keyword found')
                 break
               else: 
-                print('keyword not found')
-                get_page_records(element, scraped_jobs, scraped_urls)     
+                get_page_records(element, scraped_jobs, scraped_urls) 
+        except TimeoutException:
+          continue    
         except ElementNotInteractableException:
-            driver.find_element(By.ID,'popover-x').click()  # to handle job notification popup
-            continue
+          driver.find_element(By.ID,'popover-x').click()  # to handle job notification popup
+          continue
         except ElementClickInterceptedException:
           continue
         finally:
