@@ -1,4 +1,4 @@
-from indeedWebscraper import main
+from indeed_web_scraper import main
 
 #enter keywords here that you want to avoid in the job description
 keywords = ['degree', 'bsc', '2-3']
