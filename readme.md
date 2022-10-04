@@ -14,3 +14,7 @@ the main function running script in find_jobs.py will create a csv list of jobs 
 ## Known issues
 
 - If the script does not work right away try closing the window and running it again. It may be that the page has not loaded yet.
+
+### Credit to this repo for the base code:
+
+- https://github.com/israel-dryer/Indeed-Job-Scraper/blob/master/indeed-job-scraper-selenium.ipynb
