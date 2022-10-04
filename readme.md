@@ -16,7 +16,7 @@ the main function running script in find_jobs.py will create a csv list of jobs 
 ## Known issues
 
 - Prone to timeouts if there are too many jobs as the script is having to click on each one to read the description. I have added an exception to timeouts to try and avoid this but it is not perfect.
-- If the script does not work right away try closing the window and running it again. It may be that the page has not loaded yet.
+- If the script does not work right away try closing the window and running it again. It may be that the page has not loaded yet. This one could happen several times before it works.
 
 ### Credit to this repo for the base code:
 
