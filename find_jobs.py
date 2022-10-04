@@ -1,7 +1,7 @@
 from indeed_web_scraper import main
 
 #enter keywords here that you want to avoid in the job description
-keywords = ['degree', 'bsc', '2-3']
+keywords = ['degree', 'bsc']
 # search terms here
 searchTerm = 'developer'
 # location here
@@ -23,7 +23,7 @@ age = ''
 # last 3 days = '3'
 # last 7 days = '7'
 # last 14 days = '14'
-language = 'attr(EVPJU)'
+language = ''
 # javascript = 'attr(JB2WC)'
 # python = 'attr(X62BT)'
 # java 'attr(EVPJU)'
